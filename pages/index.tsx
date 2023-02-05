@@ -27,15 +27,18 @@ export default function Home() {
               setError(null);
             }
 
-            const response = await fetch('http://localhost:3000/links', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
+            const response = await fetch(
+              `${process.env.NEXT_PUBLIC_BASE_URL}/links`,
+              {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                  url: url,
+                }),
               },
-              body: JSON.stringify({
-                url: url,
-              }),
-            });
+            );
             const data = await response.json();
 
             setShortenedUrl(data['shortenedUrl']);
