@@ -58,7 +58,7 @@ export default function Home() {
         </form>
         {shortenedUrl && (
           <button
-            className="flex items-center gap-2 border rounded-lg px-3 py-2"
+            className="flex items-center gap-2 border rounded-lg px-3 py-2 hover:bg-gray-200"
             onClick={() => {
               navigator.clipboard.writeText(shortenedUrl);
             }}
