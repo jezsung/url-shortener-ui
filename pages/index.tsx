@@ -42,7 +42,7 @@ export default function Home() {
           </button>
         </form>
         {shortenedUrl && (
-          <div
+          <button
             className="flex items-center gap-2 border rounded-lg px-3 py-2"
             onClick={() => {
               navigator.clipboard.writeText(shortenedUrl);
@@ -52,7 +52,7 @@ export default function Home() {
             <span className="material-symbols-outlined text-gray-700">
               content_copy
             </span>
-          </div>
+          </button>
         )}
       </div>
     </div>
